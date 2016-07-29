@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { AlertComponent, DATEPICKER_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
+
 import { AppState } from '../app.service';
 import { Title } from './title';
 import { XLarge } from './x-large';
@@ -16,6 +18,8 @@ import { XLarge } from './x-large';
   // We need to tell Angular's compiler which directives are in our template.
   // Doing so will allow Angular to attach our behavior to an element
   directives: [
+    DATEPICKER_DIRECTIVES,
+    AlertComponent,
     XLarge
   ],
   // We need to tell Angular's compiler which custom pipes are in our template.
@@ -26,6 +30,7 @@ import { XLarge } from './x-large';
   templateUrl: './home.template.html'
 })
 export class Home {
+  date: Date = new Date();
   // Set our default values
   localState = { value: '' };
   // TypeScript public modifiers
